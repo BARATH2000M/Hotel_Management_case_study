@@ -1,0 +1,5 @@
+package com.guestManagement.model;
+
+public class Guest {
+
+}

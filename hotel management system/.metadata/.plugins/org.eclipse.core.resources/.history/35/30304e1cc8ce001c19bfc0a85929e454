@@ -1,0 +1,5 @@
+package com.guestManagement.controller;
+
+public class GuestController {
+
+}

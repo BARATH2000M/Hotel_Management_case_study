@@ -1,0 +1,5 @@
+package com.guestManagement.repo;
+
+public interface GuestRepo extends MongoRepository<Guest> {
+
+}
