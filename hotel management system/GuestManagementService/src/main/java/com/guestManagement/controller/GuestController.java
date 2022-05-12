@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,7 +22,7 @@ public class GuestController {
 	@Autowired
 	private GuestRepo reposit;
 	
-	@PostMapping("/save")
+	@PostMapping("/add")
 	public void store(@RequestBody Guest b){
 		reposit.insert(b);
 		
@@ -32,9 +33,15 @@ public class GuestController {
 		return reposit.findAll();
 		
 	}
+	
+	@PutMapping("/update")
+	public void updateguest(@RequestBody Guest c) {
+		reposit.save(c);
+	}
+	
 	@DeleteMapping("/delete/{id}")
 	public void del(@PathVariable String id) {
 		reposit.deleteById(id);
 	}
-;
+
 }

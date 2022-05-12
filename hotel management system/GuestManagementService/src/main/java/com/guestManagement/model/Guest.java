@@ -3,12 +3,12 @@ package com.guestManagement.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("guest")
+@Document(collection="Guestdetail")
 public class Guest {
 	
 	@Id
 	private String id;
-	private String name;
+	private String guestname;
 	private String contact;
 	private String no_of_adult;
 	private String no_of_child;
@@ -24,10 +24,10 @@ public class Guest {
 		super();
 	}
 	
-	public Guest(String id, String name, String contact, String no_of_adult, String no_of_child, String no_of_nights) {
+	public Guest(String id, String guestname, String contact, String no_of_adult, String no_of_child, String no_of_nights) {
 		super();
 		this.id=id;
-		this.name = name;
+		this.guestname = guestname;
 		this.contact = contact;
 		this.no_of_adult = no_of_adult;
 		this.no_of_child = no_of_child;
@@ -44,10 +44,10 @@ public class Guest {
 	}
 
 	public String getName() {
-		return name;
+		return guestname;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String guestname) {
+		this.guestname = guestname;
 	}
 	public String getContact() {
 		return contact;
